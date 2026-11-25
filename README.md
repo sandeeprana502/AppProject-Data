@@ -9,6 +9,8 @@ sources.json --> fetch_news.py --> data/news.json ------> summarize_news.py --> 
                                                       Gemini API   data/ai_summaries.json (cache)
 ```
 
+`AppProject` is the private backend. After a successful **Fetch News** run, its **Sync Public JSON** workflow publishes only `data/summarized_news.json` and this README to the public `AppProject-Data` repository.
+
 ## Files
 
 | File | Purpose |
@@ -22,6 +24,7 @@ sources.json --> fetch_news.py --> data/news.json ------> summarize_news.py --> 
 | `data/ai_summaries.json` | Cache of accepted AI results. Do not delete it |
 | `data/summarized_news.json` | **What the app reads first** |
 | `data/run_log.json` | Each source `ok` or `failed`, with the error |
+| `.github/workflows/sync-json.yml` | Publishes the app feed and this README to `AppProject-Data` |
 | `merge_sources.py`, `sources_additions.json` | Optional: add a prepared batch of sources safely |
 
 ## Sources and categories
@@ -65,12 +68,11 @@ Free, and it does not use the Gemini quota. Run `summarize_news.py` on your lapt
 3. Show a summary and a link, never a full article. Show pictures only from open sources.
 4. After a big change, read the Actions log and `run_log.json`.
 
-## Feed addresses used by the app (in this order)
+## Public feed address used by the app
 
-1. `https://raw.githubusercontent.com/sandeeprana502/AppProject/main/data/summarized_news.json`
-2. `https://raw.githubusercontent.com/sandeeprana502/AppProject/main/data/news.json`
+`https://raw.githubusercontent.com/sandeeprana502/AppProject-Data/main/data/summarized_news.json`
 
-The app then falls back to the copy saved on the phone. GitHub caches these files for a few minutes.
+The app falls back to the copy saved on the phone if it cannot reach this public feed. GitHub caches the file for a few minutes.
 
 ## Next checks
 
