@@ -1,9 +1,37 @@
 {
-  "generated": "2026-11-26T04:55:16.728779+00:00",
-  "count": 1231,
+  "generated": "2026-11-26T11:59:04.475648+00:00",
+  "count": 1234,
   "provider": "ollama",
   "model": "llama3.2:3b",
   "items": [
+    {
+      "id": "37e9a60bcb54",
+      "title": "M 5.2 - 265 km WNW of Houma, Tonga",
+      "summary": "A magnitude 5.2 earthquake was recorded 265 km WNW of Houma, Tonga. The event happened on 26 November 2026 at 09:22 UTC. It occurred at a depth of about 494 km. Magnitude and location can change as the agency reviews the data.",
+      "words": 42,
+      "category": "Disaster & Weather",
+      "source": "USGS earthquakes",
+      "author": "USGS",
+      "published": "2026-11-26T09:22:45.352000+00:00",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udmc",
+      "image": "",
+      "licence": "open",
+      "summary_by": "extract"
+    },
+    {
+      "id": "fa845154671c",
+      "title": "M 5.5 - 204 km S of Taliwang, Indonesia",
+      "summary": "A magnitude 5.5 earthquake was recorded 204 km S of Taliwang, Indonesia. The event happened on 26 November 2026 at 09:08 UTC. It occurred at a depth of about 15 km. Magnitude and location can change as the agency reviews the data.",
+      "words": 42,
+      "category": "Disaster & Weather",
+      "source": "USGS earthquakes",
+      "author": "USGS",
+      "published": "2026-11-26T09:08:40.640000+00:00",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udm8",
+      "image": "",
+      "licence": "open",
+      "summary_by": "extract"
+    },
     {
       "id": "6b5c596192e1",
       "title": "M 4.6 - 97 km SW of Puerto Madero, Mexico",
@@ -94,9 +122,23 @@
       "summary_by": "extract"
     },
     {
+      "id": "606c9eca0385",
+      "title": "Can image generation help visual reasoning? An empirical study",
+      "summary": "Language models think in words; then multimodal models might think in images. We test whether a generated helper improves the answer to a visual question. A model describes the helper it needs and then answers using the original and generated images together.",
+      "words": 42,
+      "category": "Technology",
+      "source": "arXiv - Machine Learning",
+      "author": "Xueyang Yu, Yifan Jing, Taiming Lu et al.",
+      "published": "2026-11-25T18:59:31+00:00",
+      "url": "https://arxiv.org/abs/2611.34935v1",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "licence": "open",
+      "summary_by": "extract"
+    },
+    {
       "id": "3a4ce4fb5b6f",
       "title": "M 4.7 - 13 km NW of Port-Vila, Vanuatu",
-      "summary": "A magnitude 4.7 earthquake was recorded 13 km NW of Port-Vila, Vanuatu. The event happened on 25 November 2026 at 18:59 UTC. It occurred at a depth of about 52 km. About 4 people reported feeling it. Magnitude and location can change as the agency reviews the data.",
+      "summary": "A magnitude 4.7 earthquake was recorded 13 km NW of Port-Vila, Vanuatu. The event happened on 25 November 2026 at 18:59 UTC. It occurred at a depth of about 52 km. About 5 people reported feeling it. Magnitude and location can change as the agency reviews the data.",
       "words": 48,
       "category": "Disaster & Weather",
       "source": "USGS earthquakes",
@@ -141,7 +183,7 @@
       "summary": "We show that in any $d$-dimensional CFT, the vacuum sandwiched Rényi mutual information (SRMI) of integer order $n$ between two disjoint balls maps to a CFT partition function on a manifold of topology $\\#^{n-1}(S^1 \\times S^{d-1})$, with moduli fixed by the ball configuration and single-ball modular flow.",
       "words": 47,
       "category": "Science",
-      "source": "arXiv - High Energy Physics Theory",
+      "source": "arXiv - Quantum Physics",
       "author": "Hewei Frederic Jia",
       "published": "2026-11-25T18:58:51+00:00",
       "url": "https://arxiv.org/abs/2611.34922v1",
@@ -192,6 +234,20 @@
       "summary_by": "extract"
     },
     {
+      "id": "d57d26fab133",
+      "title": "What a Drop Reveals: Sim-to-Real Material Estimation for Deformable Objects from Video",
+      "summary": "How an object deforms when it hits the ground reveals what it is made of. From a single real video of a drop, we estimate a deformable object's density-normalized stiffness $E/ρ$, and its yield stress $σ_Y/ρ$ when the impact causes plastic deformation, with a feed-forward predictor trained only in simulation.",
+      "words": 50,
+      "category": "Technology",
+      "source": "arXiv - Machine Learning",
+      "author": "Ziyue Peng, Yanxi Hu, Junyoung Kim et al.",
+      "published": "2026-11-25T18:47:56+00:00",
+      "url": "https://arxiv.org/abs/2611.34894v1",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "licence": "open",
+      "summary_by": "extract"
+    },
+    {
       "id": "beeef9437cbf",
       "title": "Massive Triangle in Cosmological Correlator beyond Conformal Coupling",
       "summary": "A massive scalar coupled in pairs to the inflaton generates a one-loop primordial bispectrum whose mass corrections at generic momenta have lacked closed analytic expressions beyond conformal coupling. We obtain two leading mass corrections at arbitrary external momenta in terms of multiple polylogarithms of uniform weights three and four.",
@@ -211,7 +267,7 @@
       "summary": "Qubit loss is a significant source of error in many quantum hardware platforms, requiring circuits that periodically replace or reset qubits to maintain fault-tolerance. When the reset process includes loss-resolving measurements, this information can improve decoding and substantially reduce overhead compared to the case where this information is not available.",
       "words": 50,
       "category": "Science",
-      "source": "arXiv",
+      "source": "arXiv - Quantum Physics",
       "author": "J. Wilson Staples, Winston Fu, Yihe Dong et al.",
       "published": "2026-11-25T18:47:12+00:00",
       "url": "https://arxiv.org/abs/2611.34891v1",
@@ -225,7 +281,7 @@
       "summary": "As the fault-tolerant era approaches, the question shifts from ``is it possible'' to ``is it worthwhile.'' To assess practical quantum advantage against reliable classical baselines, we examine 26 benchmark instances including FeMoco, iron-sulfur clusters, cytochrome P450, and ruthenium catalysts using two selected configuration interaction solvers, SHCI and TrimCI.",
       "words": 48,
       "category": "Science",
-      "source": "arXiv",
+      "source": "arXiv - Quantum Physics",
       "author": "Haejung Koh, Katerina Gratsea, Hao Zhang et al.",
       "published": "2026-11-25T18:45:50+00:00",
       "url": "https://arxiv.org/abs/2611.34889v1",
@@ -359,6 +415,20 @@
       "ai_summary": "As NASA prepares for upcoming space missions to the Moon and Mars, researchers are actively evaluating various crops to supply astronauts with fresh food and essential nutrition. Expanding menu variety is vital for long-term space exploration, with recent testing pointing toward options like strawberries.",
       "summary_by": "gemini",
       "content_source": "source_text"
+    },
+    {
+      "id": "8388685970ac",
+      "title": "Diagnosing internal leakage currents through magnetometry of lithium-ion cells",
+      "summary": "Internal leakage currents are difficult to detect and to localize through measurements at the terminals of lithium-ion cells. We measured the magnetic fields of pouch cells non-invasively with a magnetometer while a battery cycler set the current and recorded the voltage.",
+      "words": 41,
+      "category": "Technology",
+      "source": "arXiv - Applied Physics",
+      "author": "Shaurya Shukla, Chengtong Zhang, Yinan Hu et al.",
+      "published": "2026-11-25T16:54:34+00:00",
+      "url": "https://arxiv.org/abs/2611.34699v1",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "licence": "open",
+      "summary_by": "extract"
     },
     {
       "id": "afc105b15bba",
@@ -795,6 +865,20 @@
       ]
     },
     {
+      "id": "923042f3c41c",
+      "title": "Optimization of a Locally Shielded 16-Channel Transmit Array for Human Brain MRI at 10.5 T via Electromagnetic/Circuit Co-Simulation and Parallel Transmission Strategies",
+      "summary": "Modern neuroimaging and neuroscience increasingly demand high spatial and temporal resolution, driving the use of ultrahigh-field (7 T and above) MRI for improved signal-to-noise ratio. Realizing this advantage depends critically on advanced radiofrequency (RF) and gradient technologies, particularly multi-channel transmit arrays and high-performance head-gradient systems.",
+      "words": 45,
+      "category": "Technology",
+      "source": "arXiv - Applied Physics",
+      "author": "Mengxuan Zheng, Xin Shao, Matt Waks et al.",
+      "published": "2026-11-25T13:58:13+00:00",
+      "url": "https://arxiv.org/abs/2611.34395v1",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "licence": "open",
+      "summary_by": "extract"
+    },
+    {
       "id": "d3339544237e",
       "title": "The transverse spin-gradient approximation in noncollinear spin density functional theory",
       "summary": "We prove a quantitative error bound for a fixed-axis variant of the transverse spin-gradient approximation (TSGA) in noncollinear spin density functional theory. Inspired by Eich and Gross, we use a spin-spiral wave (SSW) as the local reference for the grand-canonical Levy-Lieb energy with the Hartree term subtracted.",
@@ -1011,7 +1095,7 @@
       "author": "Masahiro Tadokoro, Tetsuo Kodera",
       "published": "2026-11-25T01:00:02+00:00",
       "url": "https://arxiv.org/abs/2611.33590v1",
-      "image": "",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
       "licence": "open",
       "summary_by": "extract"
     },
@@ -1063,7 +1147,7 @@
       "author": "Xiaodong Luo",
       "published": "2026-11-24T21:15:36+00:00",
       "url": "https://arxiv.org/abs/2611.33450v1",
-      "image": "",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
       "licence": "open",
       "summary_by": "extract"
     },
@@ -1140,7 +1224,7 @@
       "author": "Abdullah All Hasib, Md Shafayat Hossain, Ahmedullah Aziz et al.",
       "published": "2026-11-24T20:42:37+00:00",
       "url": "https://arxiv.org/abs/2611.33420v1",
-      "image": "",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
       "licence": "open",
       "summary_by": "extract"
     },
@@ -1610,6 +1694,20 @@
       "summary_by": "extract"
     },
     {
+      "id": "e51145c31475",
+      "title": "Distinct trajectories and predictability of individual grouping patterns in dolphins link social ageing to longevity",
+      "summary": "Recent work has unearthed strong relationships between ageing and average sociability. Clear patterns of decreases in average sociability are observed across taxa; many of these are sex-specific. Individuals, however, generally deviate from population averages, and discounting individual variance in behaviour could disguise mechanisms of adaptation, selection, and developmental stability.",
+      "words": 49,
+      "category": "Science",
+      "source": "PLOS Biology",
+      "author": "Kelley C. Meehan, Barbara Class, Shinichi Nakagawa et al.",
+      "published": "2026-11-24T14:00:00+00:00",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3004022",
+      "image": "https://journals.plos.org/plosbiology/article/figure/image?id=10.1371/journal.pbio.3004022.strk&size=inline",
+      "licence": "open",
+      "summary_by": "extract"
+    },
+    {
       "id": "04cdc43e9f45",
       "title": "Beyond profiles: Supervised repeat annotation using protein embeddings",
       "summary": "Protein repeats give rise to diverse protein structures and functions, yet their sequence-based detection is often challenging because individual repeat units can diverge substantially in sequence while retaining similar structures. Most sensitive approaches rely on sequence information directly represented by alignments or derived profiles, thereby limiting flexibility and scalability.",
@@ -1634,20 +1732,6 @@
       "published": "2026-11-24T14:00:00+00:00",
       "url": "https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1014831",
       "image": "https://journals.plos.org/plospathogens/article/figure/image?id=10.1371/journal.ppat.1014831.g006&size=inline",
-      "licence": "open",
-      "summary_by": "extract"
-    },
-    {
-      "id": "e51145c31475",
-      "title": "Distinct trajectories and predictability of individual grouping patterns in dolphins link social ageing to longevity",
-      "summary": "Recent work has unearthed strong relationships between ageing and average sociability. Clear patterns of decreases in average sociability are observed across taxa; many of these are sex-specific. Individuals, however, generally deviate from population averages, and discounting individual variance in behaviour could disguise mechanisms of adaptation, selection, and developmental stability.",
-      "words": 49,
-      "category": "Science",
-      "source": "PLOS Biology",
-      "author": "Kelley C. Meehan, Barbara Class, Shinichi Nakagawa et al.",
-      "published": "2026-11-24T14:00:00+00:00",
-      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3004022",
-      "image": "https://journals.plos.org/plosbiology/article/figure/image?id=10.1371/journal.pbio.3004022.strk&size=inline",
       "licence": "open",
       "summary_by": "extract"
     },
@@ -2585,7 +2669,7 @@
       "author": "Xiaoli Gong, Guohu Luo, Jiaxin Wu et al.",
       "published": "2026-11-24T09:53:36+00:00",
       "url": "https://arxiv.org/abs/2611.32291v1",
-      "image": "",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
       "licence": "open",
       "summary_by": "extract"
     },
@@ -2599,7 +2683,7 @@
       "author": "Tanguy Dusserre, Hervé Dole, Mathieu Langer et al.",
       "published": "2026-11-24T09:46:29+00:00",
       "url": "https://arxiv.org/abs/2611.32282v1",
-      "image": "",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
       "licence": "open",
       "summary_by": "extract"
     },
@@ -2613,7 +2697,7 @@
       "author": "Tianyu Liang, Hulin Wang, Kai Chen et al.",
       "published": "2026-11-24T09:43:11+00:00",
       "url": "https://arxiv.org/abs/2611.32277v1",
-      "image": "",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
       "licence": "open",
       "summary_by": "extract"
     },
@@ -2627,7 +2711,7 @@
       "author": "Lorenzo Agosta, Alfredo Metere, Mikhail Dzugutov",
       "published": "2026-11-24T09:40:57+00:00",
       "url": "https://arxiv.org/abs/2611.32273v1",
-      "image": "",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
       "licence": "open",
       "summary_by": "extract"
     },
@@ -8463,7 +8547,7 @@
     {
       "id": "3bc1e75a0988",
       "title": "M 5.0 - 10 km NW of Pinnacles, CA",
-      "summary": "A magnitude 4.98 earthquake was recorded 10 km NW of Pinnacles, CA. The event happened on 20 November 2026 at 06:49 UTC. It occurred at a depth of about 6 km. The agency has flagged a possible tsunami threat. About 3761 people reported feeling it.",
+      "summary": "A magnitude 4.98 earthquake was recorded 10 km NW of Pinnacles, CA. The event happened on 20 November 2026 at 06:49 UTC. It occurred at a depth of about 6 km. The agency has flagged a possible tsunami threat. About 3762 people reported feeling it.",
       "words": 45,
       "category": "Disaster & Weather",
       "source": "USGS earthquakes",
@@ -17543,48 +17627,6 @@
       "author": "NASA EONET",
       "published": "2026-11-05T16:11:00+00:00",
       "url": "https://irwin.doi.gov/observer/incidents/2026-WYBHF-000401",
-      "image": "",
-      "licence": "open",
-      "summary_by": "extract"
-    },
-    {
-      "id": "87779c154462",
-      "title": "M 4.8 - Sea of Okhotsk",
-      "summary": "A magnitude 4.8 earthquake was recorded Sea of Okhotsk. The event happened on 05 November 2026 at 10:09 UTC. It occurred at a depth of about 554 km. Magnitude and location can change as the agency reviews the data. The agency event page has the map, updates and safety information.",
-      "words": 50,
-      "category": "Disaster & Weather",
-      "source": "USGS earthquakes",
-      "author": "USGS",
-      "published": "2026-11-05T10:09:33.723000+00:00",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tw7b",
-      "image": "",
-      "licence": "open",
-      "summary_by": "extract"
-    },
-    {
-      "id": "aeeffdc1b88d",
-      "title": "M 5.1 - 19 km NNW of Masumbwe, Tanzania",
-      "summary": "A magnitude 5.1 earthquake was recorded 19 km NNW of Masumbwe, Tanzania. The event happened on 05 November 2026 at 09:22 UTC. It occurred at a depth of about 10 km. About 20 people reported feeling it. Magnitude and location can change as the agency reviews the data. The agency event page has the map, updates and safety information.",
-      "words": 59,
-      "category": "Disaster & Weather",
-      "source": "USGS earthquakes",
-      "author": "USGS",
-      "published": "2026-11-05T09:22:32.714000+00:00",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tw76",
-      "image": "",
-      "licence": "open",
-      "summary_by": "extract"
-    },
-    {
-      "id": "aef2a75d46eb",
-      "title": "M 5.0 - 111 km W of Petrolia, CA",
-      "summary": "A magnitude 4.96 earthquake was recorded 111 km W of Petrolia, CA. The event happened on 05 November 2026 at 04:56 UTC. It occurred at a depth of about 10 km. About 145 people reported feeling it. Magnitude and location can change as the agency reviews the data. The agency event page has the map, updates and safety information.",
-      "words": 59,
-      "category": "Disaster & Weather",
-      "source": "USGS earthquakes",
-      "author": "USGS",
-      "published": "2026-11-05T04:56:02.670000+00:00",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75462637",
       "image": "",
       "licence": "open",
       "summary_by": "extract"
