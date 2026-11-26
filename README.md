@@ -6,7 +6,7 @@ GitHub Actions runs this every 3 hours and on demand. It collects science news, 
 sources.json --> fetch_news.py --> data/news.json ------> summarize_news.py --> data/summarized_news.json --> app
                                                               |        ^
                                                               v        |
-                                                      Gemini API   data/ai_summaries.json (cache)
+                                            Ollama (Llama 3.2)   data/ai_summaries.json (cache)
 ```
 
 `AppProject` is the private backend. After a successful **Fetch News** run, its **Sync Public JSON** workflow publishes only `data/summarized_news.json` and this README to the public `AppProject-Data` repository.
