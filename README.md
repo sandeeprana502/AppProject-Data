@@ -16,11 +16,11 @@ sources.json --> fetch_news.py --> data/news.json ------> summarize_news.py --> 
 | File | Purpose |
 |---|---|
 | `sources.json` | Source list and settings. Edit this to add, remove or fix a source or category |
-| `fetch_news.py` | Fetch, clean, tag, remove near-duplicate stories, keep the last 21 days |
+| `fetch_news.py` | Fetch, clean, tag, remove near-duplicate stories, keep the last 21 days, mark new IDs |
 | `summarize_news.py` | Read article text, ask the AI, validate, cache, build the app feed |
 | `requirements.txt` | Python libraries (`requests`, `feedparser`, `trafilatura`) |
 | `.github/workflows/*.yml` | Schedule (`0 */3 * * *`) and the manual **Run workflow** button |
-| `data/news.json` | Original news. Keep it as the untouched source feed |
+| `data/news.json` | Original news and `new_item_ids` from the latest fetch |
 | `data/ai_summaries.json` | Cache of accepted AI results. Do not delete it |
 | `data/summarized_news.json` | **What the app reads first** |
 | `data/run_log.json` | Each source `ok` or `failed`, with the error |
@@ -46,20 +46,21 @@ Each entry in `sources.json` has `name`, `category`, `type`, `url`, `licence` (`
 
 | Setting | Name |
 |---|---|
-| GitHub secret | `GEMINI_API_KEY` |
-| GitHub variable | `GEMINI_MODEL` (overrides the script's default: keep them consistent) |
+| Runtime | Ollama on the GitHub Actions runner (no AI API key) |
+| Model | `llama3.2:3b` |
 
-Per run: up to 10 new articles, in batches of 5. Accepted results are saved in `data/ai_summaries.json`; cached summaries are refreshed when the source headline or description changes. If the AI fails or the answer is rejected, a complete 40-50 word source description may be used (`summary_by: extract`); otherwise the article is omitted. A publisher block (HTTP 403 or 429) is not a Gemini failure: the script falls back to the feed text only when it passes the same quality checks.
+Each fetch marks newly added or source-updated open-license stories in `data/news.json`. Every such story is summarized in that workflow run, in batches of 5; previously fetched stories are skipped and their cached summaries are reused. Existing Gemini summaries are not regenerated. Accepted results are saved in `data/ai_summaries.json`; a source headline or description change queues that story again. If the model fails, the workflow fails without committing, so the new stories are retried next run. If the source text is insufficient or the answer is rejected, a complete 40-50 word source description may be used (`summary_by: extract`); otherwise the article is omitted.
 
 To check what you got, look at `summary_by` on each article, not at `provider` at the top of the file.
 
-### Using a local model (Ollama) instead
-Free, and it does not use the Gemini quota. Run `summarize_news.py` on your laptop with an Ollama model. Run `git pull` first, and do not run it at the same time as the Actions job: both write `ai_summaries.json`, and the uploads can clash.
+The workflow caches the model files between jobs and skips model setup when no new stories are found. The first run with new stories downloads about 2 GB; cache eviction or a changed model tag requires another download. To use the smaller 1B model, change `OLLAMA_MODEL` to `llama3.2:1b` in `.github/workflows/fetch.yml` (about 1.3 GB); 3B is the default for better instruction following and summaries. The runner uses CPU inference, so allow up to 60 minutes per job.
+
+Stories stay in the feed for 21 days by default. NASA Earth Observatory's two feeds have a 180-day `max_age_days` override. Other per-source `max_age_days` values in `sources.json` can also change the window. Stories 2 or 10 days old are retained; older ones age out on a successful fetch after their source's limit.
 
 ## Article fields
 
 `id, title, summary, category, source, author, url, published, image`, plus after AI processing (some may be missing):
-`original_title`, `original_summary`, `summary_by` (`gemini` or `extract`), `content_source` (`article` or `rss`), `flow` (3 to 5 short steps).
+`original_title`, `original_summary`, `summary_by` (`ollama` or `extract`), `content_source` (`article` or `rss`), `flow` (3 to 5 short steps).
 
 ## Rules to keep
 
