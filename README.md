@@ -1,6 +1,6 @@
 # In-Brief backend (AppProject)
 
-GitHub Actions runs this every 3 hours and on demand. It collects science news, adds AI summaries, and saves JSON files that the Flutter app downloads. No server, no hosting bill.
+GitHub Actions schedules this every 3 hours and can also be started on demand. The cron uses UTC and is set away from the top of the hour to reduce queue delays; in India, its nominal times are 02:47, 05:47, 08:47, 11:47, 14:47, 17:47, 20:47 and 23:47 IST. GitHub Actions scheduling is best-effort: runs can still be delayed or dropped during high load. It collects science news, adds AI summaries, and saves JSON files that the Flutter app downloads. No server, no hosting bill.
 
 ```
 sources.json --> fetch_news.py --> data/news.json ------> summarize_news.py --> data/summarized_news.json --> app
@@ -19,7 +19,7 @@ sources.json --> fetch_news.py --> data/news.json ------> summarize_news.py --> 
 | `fetch_news.py` | Fetch, clean, tag, remove near-duplicate stories, keep the last 21 days, mark new IDs |
 | `summarize_news.py` | Read article text, ask the AI, validate, cache, build the app feed |
 | `requirements.txt` | Python libraries (`requests`, `feedparser`, `trafilatura`) |
-| `.github/workflows/*.yml` | Schedule (`0 */3 * * *`) and the manual **Run workflow** button |
+| `.github/workflows/*.yml` | Schedule (`17 */3 * * *`, UTC) and the manual **Run workflow** button |
 | `data/news.json` | Original news and `new_item_ids` from the latest fetch |
 | `data/ai_summaries.json` | Cache of accepted AI results. Do not delete it |
 | `data/summarized_news.json` | **What the app reads first** |
@@ -36,6 +36,7 @@ Each entry in `sources.json` has `name`, `category`, `type`, `url`, `licence` (`
 - Published stories must have at least 40 complete, useful words; newly generated descriptions target 40-50 words. Short, incomplete, or visibly truncated source text is excluded. Similar stories in the same category are conservatively deduplicated; separate Disaster & Weather events are preserved.
 - **`open` sources** get a 40-50 word summary when enough readable article text is available. **`check` sources** are excluded from the app feed until their terms are confirmed.
 - A broken source never stops the others. Its address is the first thing to check in `run_log.json`.
+- **PIB currently returns HTTP 403** for its configured RSS endpoint, including from the GitHub runner. This is a denial by PIB's server, not a feed parsing error. The workflow keeps prior PIB stories and reports the failure; a reliable fix requires PIB to permit access or provide an authorized feed endpoint. Do not substitute Google News RSS: its feed terms restrict use to personal, non-commercial feed readers.
 
 ### Add or fix a source
 1. Edit `sources.json`.
@@ -49,7 +50,7 @@ Each entry in `sources.json` has `name`, `category`, `type`, `url`, `licence` (`
 | Runtime | Ollama on the GitHub Actions runner (no AI API key) |
 | Model | `llama3.2:3b` |
 
-Each fetch marks newly added or source-updated open-license stories in `data/news.json`. Every such story is summarized in that workflow run, in batches of 5; previously fetched stories are skipped and their cached summaries are reused. Existing Gemini summaries are not regenerated. Accepted results are saved in `data/ai_summaries.json`; a source headline or description change queues that story again. If the model fails, the workflow fails without committing, so the new stories are retried next run. If the source text is insufficient or the answer is rejected, a complete 40-50 word source description may be used (`summary_by: extract`); otherwise the article is omitted.
+Each fetch marks newly added or source-updated open-license stories in `data/news.json`. Every such story is summarized in that workflow run, in batches of 2; failed model calls are split into smaller batches and retried. Previously fetched stories are skipped and their cached summaries are reused. Existing Gemini summaries are not regenerated. Accepted results are saved in `data/ai_summaries.json`; a source headline or description change queues that story again. If the model still fails, the workflow fails without committing, so the new stories are retried next run. If the source text is insufficient or the answer is rejected, a complete 40-50 word source description may be used (`summary_by: extract`); otherwise the article is omitted.
 
 To check what you got, look at `summary_by` on each article, not at `provider` at the top of the file.
 
